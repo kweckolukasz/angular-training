@@ -14,12 +14,18 @@
             name="serverName"
             id="inputServerName"
             class="form-control"
-            value=""
             pattern=""
             title="Server name"
+            (input)="onInputTyped($event)"
           />
         </div>
-        <button type="button" class="btn btn-primary">Add Server</button>
+        <button
+          type="button"
+          class="btn btn-primary"
+          [disabled]="inputNotEmpty()"
+        >
+          Add Server
+        </button>
       </form>
 
       <h2>Servers</h2>
