@@ -6,12 +6,26 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  isInputEmpty: boolean = false;
+  userName: string = '';
+  serverName: string = '';
 
-  inputNotEmpty() {
-    return this.isInputEmpty;
+  serverCreated: boolean = false;
+  showServerCreatedLabel() {
+    return this.serverCreated;
   }
-  onInputTyped($event) {
-    this.isInputEmpty = $event.srcElement.value === '' ? true : false;
+
+  inputIsEmpty() {
+    return !(this.userName !== '' && this.serverName !== '');
+  }
+
+  onSubmitFormButtonClick() {
+      setTimeout(() => {
+      this.serverName = '';
+      this.userName = '';
+    }, 2000);
+    this.serverCreated = true;
+    setTimeout(() => {
+      this.serverCreated = false;
+    }, 2000);
   }
 }

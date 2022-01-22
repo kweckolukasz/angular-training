@@ -6,23 +6,36 @@
 
       <form action="submitForm()" method="POST" role="form">
         <legend>Add a server</legend>
-
+        <span
+          class="label label-success"
+          [style.visibility]="showServerCreatedLabel() ? 'visible' : 'hidden'"
+          >Server {{ serverName }} created for user {{ userName }}</span
+        >
         <div class="form-group">
-          <label for=""></label>
+          <label for="inputServerName">Server Name</label>
           <input
             type="text"
             name="serverName"
             id="inputServerName"
             class="form-control"
-            pattern=""
             title="Server name"
-            (input)="onInputTyped($event)"
+            [(ngModel)]="serverName"
+          />
+          <label for="input\u\1">User Name</label>
+          <input
+            type="text"
+            name="userName"
+            id="input\u\1"
+            class="form-control"
+            title="User name"
+            [(ngModel)]="userName"
           />
         </div>
         <button
           type="button"
           class="btn btn-primary"
-          [disabled]="inputNotEmpty()"
+          [disabled]="inputIsEmpty()"
+          (click)="onSubmitFormButtonClick()"
         >
           Add Server
         </button>
