@@ -3,6 +3,26 @@
     <div class="col-xs-12">
       <h1>App component</h1>
       <hr />
+
+      <form action="submitForm()" method="POST" role="form">
+        <legend>Add a server</legend>
+
+        <div class="form-group">
+          <label for=""></label>
+          <input
+            type="text"
+            name="serverName"
+            id="inputServerName"
+            class="form-control"
+            value=""
+            pattern=""
+            title="Server name"
+          />
+        </div>
+        <button type="button" class="btn btn-primary">Add Server</button>
+      </form>
+
+      <h2>Servers</h2>
       <app-servers></app-servers>
     </div>
   </div>
