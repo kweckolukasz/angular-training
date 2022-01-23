@@ -9,23 +9,20 @@ export class AppComponent {
   userName: string = '';
   serverName: string = '';
 
-  serverCreated: boolean = false;
-  showServerCreatedLabel() {
-    return this.serverCreated;
-  }
+  serverCreated: boolean = undefined;
 
   inputIsEmpty() {
     return !(this.userName !== '' && this.serverName !== '');
   }
 
   onSubmitFormButtonClick() {
-      setTimeout(() => {
+    setTimeout(() => {
       this.serverName = '';
       this.userName = '';
     }, 2000);
-    this.serverCreated = true;
+    this.serverCreated = this.serverName === 'a' ? false : true;
     setTimeout(() => {
-      this.serverCreated = false;
+      this.serverCreated = undefined;
     }, 2000);
   }
 }

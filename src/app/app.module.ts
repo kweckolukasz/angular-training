@@ -2,20 +2,21 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
-import { ServerComponent } from './server/server.component';
+import { ServerComponent } from './servers/server/server.component';
 import { ServersComponent } from './servers/servers.component';
-import { warningAlert } from './alerts/warningAlert/warningAlert.component';
-import { errorAlert } from './alerts/errorAlert/errorAlert.component';
+import { AlertComponent } from './servers/alert/alert.component';
+import { CommonModule } from '@angular/common';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ServerComponent,
     ServersComponent,
-    warningAlert,
-    errorAlert,
+    AlertComponent,
+    NavbarComponent,
   ],
-  imports: [BrowserModule, FormsModule],
+  imports: [BrowserModule, FormsModule, CommonModule],
   providers: [],
   bootstrap: [AppComponent],
 })
