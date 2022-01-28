@@ -1,4 +1,4 @@
-import { Component, Inject } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-server',
@@ -8,9 +8,7 @@ import { Component, Inject } from '@angular/core';
 })
 export class ServerComponent {
   serverName: string;
-  constructor(@Inject(String) serverName: string) {
-    this.serverName = serverName;
-  }
+  constructor() {}
   getServerStatus() {
     return Math.random() < 0.5 ? 'red' : 'green';
   }

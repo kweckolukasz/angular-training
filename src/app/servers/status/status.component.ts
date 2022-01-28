@@ -1,12 +1,12 @@
 import { Component, Inject, Injectable } from '@angular/core';
 
 @Component({
-  selector: 'alert',
+  selector: 'app-alert',
   template: `
     <span [ngClass]="getClass()">Server Status: {{ serverStatus }}</span>
   `,
 })
-export class AlertComponent {
+export class StatusComponent {
   serverStatus: string;
   className = 'label';
 

@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { ServerComponent } from './servers/server/server.component';
 import { ServersComponent } from './servers/servers.component';
-import { AlertComponent } from './servers/alert/alert.component';
+import { StatusComponent } from './servers/status/status.component';
 import { CommonModule } from '@angular/common';
 import { NavbarComponent } from './navbar/navbar.component';
 
@@ -13,7 +13,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     AppComponent,
     ServerComponent,
     ServersComponent,
-    AlertComponent,
+    StatusComponent,
     NavbarComponent,
   ],
   imports: [BrowserModule, FormsModule, CommonModule],

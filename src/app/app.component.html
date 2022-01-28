@@ -1,21 +1,13 @@
 <app-navbar></app-navbar>
-
 <div class="container mt-3">
   <div class="row">
     <div class="col-xs-12">
-      <h1>App component</h1>
-      <hr />
-
       <form action="submitForm()" method="POST" role="form">
         <legend>Add a server</legend>
-        <span class="label label-success" *ngIf="serverCreated; else noServer"
+        <span class="label label-success" *ngIf="serverCreated"
           >Server {{ serverName }} was created for user {{ userName }}</span
         >
-        <ng-template #noServer
-          ><span class="label label-error"
-            >Server {{ serverName }} was not created!</span
-          ></ng-template
-        >
+
         <div class="form-group">
           <label for="inputServerName">Server Name</label>
           <input
@@ -38,15 +30,13 @@
         </div>
         <button
           type="button"
-          class="btn btn-primary"
+          class="btn btn-primary mt-3 mb-3"
           [disabled]="inputIsEmpty()"
           (click)="onSubmitFormButtonClick()"
         >
           Add Server
         </button>
       </form>
-
-      <h2>Servers</h2>
       <app-servers></app-servers>
     </div>
   </div>
