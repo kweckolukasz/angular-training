@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { StatusComponent as StatusComponent } from 'src/app/servers/status/status.component';
-import { ServerModel } from './server/server.model';
+import { StatusItemComponent as StatusItemComponent } from 'src/app/servers/status/StatusItem.component';
+import { ServerModel } from './server/Server.model';
 import { StatusServer } from './statusServer/StatusServer';
 
 @Component({
@@ -9,7 +9,6 @@ import { StatusServer } from './statusServer/StatusServer';
   styleUrls: ['./servers.component.css'],
 })
 export class ServersComponent implements OnInit {
-  className = 'badge rounded-pill bg-';
 
   serversAndStatuses: StatusServer[] = [
     new StatusServer('onet', 'online'),
@@ -21,30 +20,12 @@ export class ServersComponent implements OnInit {
     new ServerModel('sasanka', 'https://sasanka.info', 2),
     new ServerModel('allegro', 'https://allegro.pl', 10),
   ];
-  statuses: StatusComponent[] = [
-    new StatusComponent('online'),
-    new StatusComponent('offline'),
-    new StatusComponent('uknown'),
+  statuses: StatusItemComponent[] = [
+    new StatusItemComponent('online'),
+    new StatusItemComponent('offline'),
+    new StatusItemComponent('uknown'),
   ];
 
   constructor() {}
-
-  getServerStatus() {
-    return Math.random() < 0.5 ? 'red' : 'green';
-  }
-
-  getClass(serverStatus) {
-    switch (serverStatus) {
-      case 'offline':
-        return 'badge rounded-pill bg-danger';
-
-      case 'online':
-        return 'badge rounded-pill bg-success';
-
-      default:
-        return 'badge rounded-pill bg-warning';
-    }
-  }
-
   ngOnInit(): void {}
 }

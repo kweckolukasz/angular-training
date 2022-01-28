@@ -1,18 +1,3 @@
-<!-- <div class="col">
-  <div class="row" *ngFor="let server of servers">
-    <h2 [ngStyle]="{ color: getServerStatus() }">{{ server.name }}</h2>
-  </div>
-</div>
-
-<div class="col">
-  <div class="row" *ngFor="let status of statuses">
-    <span [ngClass]="getClass(status.className)"
-      >Server Status: {{ status.serverStatus }}</span
-    >
-  </div>
-</div> -->
-
-<!-- [ngClass]="getClass()" -->
 <table class="table table-striped table-responsive">
   <thead class="thead-default">
     <tr>
@@ -22,16 +7,8 @@
   </thead>
   <tbody>
     <tr *ngFor="let statusServer of serversAndStatuses">
-      <td scope="row">
-        <a name="" id="" class="btn btn-default" href="#" role="button">{{
-          statusServer.serverName
-        }}</a>
-      </td>
-      <td scope="row">
-        <span [class]="getClass(statusServer.statusName)">{{
-          statusServer.statusName
-        }}</span>
-      </td>
+      <app-server-item></app-server-item>
+      <app-status-item></app-status-item>
     </tr>
   </tbody>
 </table>

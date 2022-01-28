@@ -2,19 +2,21 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
-import { ServerComponent } from './servers/server/server.component';
+import { ServerItemComponent } from './servers/server/ServerItem.component';
 import { ServersComponent } from './servers/servers.component';
-import { StatusComponent } from './servers/status/status.component';
+import { StatusItemComponent } from './servers/status/StatusItem.component';
 import { CommonModule } from '@angular/common';
-import { NavbarComponent } from './navbar/navbar.component';
+import { NavbarComponent } from './navbar/Navbar.component';
+import { ServerEditComponent } from './servers/server-edit/Server-edit.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ServerComponent,
+    ServerItemComponent,
     ServersComponent,
-    StatusComponent,
+    StatusItemComponent,
     NavbarComponent,
+    ServerEditComponent,
   ],
   imports: [BrowserModule, FormsModule, CommonModule],
   providers: [],
