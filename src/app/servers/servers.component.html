@@ -7,8 +7,16 @@
   </thead>
   <tbody>
     <tr *ngFor="let statusServer of serversAndStatuses">
-      <app-server-item></app-server-item>
-      <app-status-item></app-status-item>
+      <td scope="row">
+        <app-server-item
+          [serverName]="statusServer.serverName"
+        ></app-server-item>
+      </td>
+      <td scope="row">
+        <app-status-item
+          [statusName]="statusServer.statusName"
+        ></app-status-item>
+      </td>
     </tr>
   </tbody>
 </table>

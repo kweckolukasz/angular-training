@@ -1,13 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-server-item',
-  template: `<td scope="row">
+  template: `
     <a name="" id="" class="btn btn-default" href="#" role="button">{{
-      statusServer.serverName
+      serverName
     }}</a>
-  </td>`,
+  `,
 })
 export class ServerItemComponent {
+  @Input() serverName: string;
   constructor() {}
 }

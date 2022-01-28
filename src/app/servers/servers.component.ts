@@ -9,7 +9,6 @@ import { StatusServer } from './statusServer/StatusServer';
   styleUrls: ['./servers.component.css'],
 })
 export class ServersComponent implements OnInit {
-
   serversAndStatuses: StatusServer[] = [
     new StatusServer('onet', 'online'),
     new StatusServer('sasanka', 'uknown'),
@@ -20,11 +19,7 @@ export class ServersComponent implements OnInit {
     new ServerModel('sasanka', 'https://sasanka.info', 2),
     new ServerModel('allegro', 'https://allegro.pl', 10),
   ];
-  statuses: StatusItemComponent[] = [
-    new StatusItemComponent('online'),
-    new StatusItemComponent('offline'),
-    new StatusItemComponent('uknown'),
-  ];
+  statuses: StatusItemComponent[] = [];
 
   constructor() {}
   ngOnInit(): void {}

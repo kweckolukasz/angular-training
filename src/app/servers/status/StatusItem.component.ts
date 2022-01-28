@@ -1,22 +1,16 @@
-import { Component, Inject, Injectable } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-status-item',
-  template: `
-    <td scope="row">
-      <span [class]="getClass(statusServer.statusName)">{{
-        statusServer.statusName
-      }}</span>
-    </td>
+  template: ` 
+      <span [class]="getClass(statusName)">{{ statusName }}</span>
   `,
 })
 export class StatusItemComponent {
-  serverStatus: string;
+  @Input() statusName: string;
   className = 'label';
 
-  constructor(@Inject(String) serverStatus: string) {
-    this.serverStatus = serverStatus;
-  }
+  constructor() {}
 
   getClass(serverStatus) {
     switch (serverStatus) {
