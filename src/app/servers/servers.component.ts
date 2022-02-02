@@ -12,7 +12,7 @@ export class ServersComponent implements OnInit {
   serversAndStatuses: StatusServer[] = [
     new StatusServer('onet', 'online'),
     new StatusServer('sasanka', 'uknown'),
-    new StatusServer('allegro', 'offline'),
+    new StatusServer('allegro', 'offline')
   ];
   servers: ServerModel[] = [
     new ServerModel('onet', 'https://www.onet.pl', 1),
