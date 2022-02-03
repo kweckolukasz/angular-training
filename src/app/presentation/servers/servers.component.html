@@ -6,16 +6,12 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let statusServer of serversAndStatuses">
+    <tr *ngFor="let serverItem of servers$ | async">
       <td scope="row">
-        <app-server-item
-          [serverName]="statusServer.serverName"
-        ></app-server-item>
+        <app-server-item [serverName]="serverItem.name"></app-server-item>
       </td>
       <td scope="row">
-        <app-status-item
-          [statusName]="statusServer.statusName"
-        ></app-status-item>
+        <app-status-item [isOnline]="serverItem.isOnline"></app-status-item>
       </td>
     </tr>
   </tbody>

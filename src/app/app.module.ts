@@ -2,12 +2,12 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
-import { ServerItemComponent } from './servers/server/ServerItem.component';
-import { ServersComponent } from './servers/servers.component';
-import { StatusItemComponent } from './servers/status/StatusItem.component';
+import { ServerItemComponent } from './presentation/server/server-item/ServerItem.component';
+import { ServersComponent } from './presentation/servers/servers.component';
+import { StatusItemComponent } from './presentation/status/StatusItem.component';
 import { CommonModule } from '@angular/common';
-import { NavbarComponent } from './navbar/Navbar.component';
-import { ServerEditComponent } from './servers/server-edit/Server-edit.component';
+import { NavbarComponent } from './presentation/navbar/Navbar.component';
+import { ServerEditComponent } from './presentation/server/server-edit/Server-edit.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -15,10 +15,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
-import { GETS_SERVERS } from './sscArch/domain/getsServers';
-import { HttpServersService } from './sscArch/infrastructure/http-servers.service';
-import { ServerListComponent } from './sscArch/presentation/server-list/server-list.component';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { GETS_SERVERS } from './domain/getsServers';
+import { HttpServersService } from './infrastructure/http-servers.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -28,7 +27,6 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     StatusItemComponent,
     NavbarComponent,
     ServerEditComponent,
-    ServerListComponent,
   ],
   imports: [
     BrowserModule,
