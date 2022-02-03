@@ -15,6 +15,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+import { GETS_SERVERS } from './sscArch/domain/getsServers';
+import { HttpServersService } from './sscArch/infrastructure/http-servers.service';
+import { ServerListComponent } from './sscArch/presentation/server-list/server-list.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,9 +28,22 @@ import { MatListModule } from '@angular/material/list';
     StatusItemComponent,
     NavbarComponent,
     ServerEditComponent,
+    ServerListComponent,
   ],
-  imports: [BrowserModule, FormsModule, CommonModule, BrowserAnimationsModule, LayoutModule, MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule],
-  providers: [],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    CommonModule,
+    BrowserAnimationsModule,
+    LayoutModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule,
+    HttpClientModule,
+  ],
+  providers: [{ provide: GETS_SERVERS, useClass: HttpServersService }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
