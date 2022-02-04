@@ -5,7 +5,7 @@
     fixedInViewport
     [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
     [mode]="(isHandset$ | async) ? 'over' : 'side'"
-    [opened]="(isHandset$ | async) === false"
+    [opened]="false"
   >
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
@@ -29,8 +29,6 @@
       <div class="row">
         <div class="col-xs-12">
           <app-servers></app-servers>
-          <hr />
-          <app-server-edit></app-server-edit>
         </div>
       </div>
     </div>

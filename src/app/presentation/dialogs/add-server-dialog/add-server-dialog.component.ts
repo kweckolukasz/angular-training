@@ -1,18 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-server-edit',
-  templateUrl: './Server-edit.component.html',
+  selector: 'app-add-server-dialog',
+  templateUrl: './add-server-dialog.component.html',
+  styleUrls: ['./add-server-dialog.component.css'],
 })
-export class ServerEditComponent implements OnInit {
+export class AddServerDialogComponent implements OnInit {
+  constructor() {}
+
+  ngOnInit(): void {}
   userName: string = '';
   serverName: string = '';
 
   serverCreated: boolean = undefined;
-  constructor() {}
-
-  ngOnInit(): void {}
-
   onSubmitFormButtonClick() {
     setTimeout(() => {
       this.serverName = '';

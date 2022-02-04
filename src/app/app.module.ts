@@ -7,7 +7,6 @@ import { ServersComponent } from './presentation/servers/servers.component';
 import { StatusItemComponent } from './presentation/status/StatusItem.component';
 import { CommonModule } from '@angular/common';
 import { NavbarComponent } from './presentation/navbar/Navbar.component';
-import { ServerEditComponent } from './presentation/server/server-edit/Server-edit.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -16,9 +15,14 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatTableModule } from '@angular/material/table';
+import {
+  MatDialogModule,
+  MAT_DIALOG_DEFAULT_OPTIONS,
+} from '@angular/material/dialog';
 import { GETS_SERVERS } from './domain/getsServers';
 import { HttpServersService } from './infrastructure/http-servers.service';
 import { HttpClientModule } from '@angular/common/http';
+import { AddServerDialogComponent } from './presentation/dialogs/add-server-dialog/add-server-dialog.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +31,7 @@ import { HttpClientModule } from '@angular/common/http';
     ServersComponent,
     StatusItemComponent,
     NavbarComponent,
-    ServerEditComponent,
+    AddServerDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,8 +46,12 @@ import { HttpClientModule } from '@angular/common/http';
     MatListModule,
     MatTableModule,
     HttpClientModule,
+    MatDialogModule,
   ],
-  providers: [{ provide: GETS_SERVERS, useClass: HttpServersService }],
+  providers: [
+    { provide: GETS_SERVERS, useClass: HttpServersService },
+    { provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: { hasBackdrop: false } },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
