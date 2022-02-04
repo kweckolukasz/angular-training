@@ -15,6 +15,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+import { MatTableModule } from '@angular/material/table';
 import { GETS_SERVERS } from './domain/getsServers';
 import { HttpServersService } from './infrastructure/http-servers.service';
 import { HttpClientModule } from '@angular/common/http';
@@ -39,6 +40,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
+    MatTableModule,
     HttpClientModule,
   ],
   providers: [{ provide: GETS_SERVERS, useClass: HttpServersService }],

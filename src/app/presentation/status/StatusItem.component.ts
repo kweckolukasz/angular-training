@@ -4,10 +4,10 @@ import { Component, Input } from '@angular/core';
   selector: 'app-status-item',
   template: `
     <span *ngIf="isOnline; else isOffline">
-      <span class="label badge rounded-pill bg-success">online</span>
+      <span class="text-uppercase text-success font-weight-bold">online</span>
     </span>
     <ng-template #isOffline>
-      <span class="label badge rounded-pill bg-danger">offline</span>
+      <span class="text-uppercase text-danger font-weight-bold">offline</span>
     </ng-template>
   `,
 })

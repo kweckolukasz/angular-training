@@ -1,7 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { GetsServers, GETS_SERVERS } from 'src/app/domain/getsServers';
-import { StatusItemComponent } from 'src/app/presentation/status/StatusItem.component';
-import { ServerItemComponent } from '../server/server-item/ServerItem.component';
 
 @Component({
   selector: 'app-servers',
@@ -10,6 +8,7 @@ import { ServerItemComponent } from '../server/server-item/ServerItem.component'
 })
 export class ServersComponent implements OnInit {
   servers$ = this.getsServers.getAll();
+  displayedColumns: string[] = ['server', 'status'];
   constructor(@Inject(GETS_SERVERS) private getsServers: GetsServers) {}
   ngOnInit(): void {}
 }

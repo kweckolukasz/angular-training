@@ -1,4 +1,4 @@
-<table class="table table-striped table-responsive">
+<!-- <table class="table table-striped table-responsive">
   <thead class="thead-default">
     <tr>
       <th>servers</th>
@@ -15,4 +15,27 @@
       </td>
     </tr>
   </tbody>
-</table>
+</table> -->
+
+<mat-table [dataSource]="servers$ | async">
+  <ng-container matColumnDef="server">
+    <mat-header-cell mat-header-cell *matHeaderCellDef
+      >Server Name</mat-header-cell
+    >
+    <mat-cell mat-cell *matCellDef="let server">{{ server.name }}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="status">
+    <mat-header-cell mat-header-cell *matHeaderCellDef
+      >Status of Server</mat-header-cell
+    >
+    <mat-cell
+      mat-cell
+      *matCellDef="let server"
+      [ngStyle]="{ color: server.isOnline ? 'green' : 'red' }"
+      >{{ server.isOnline ? "online" : "offline" }}</mat-cell
+    >
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+</mat-table>
