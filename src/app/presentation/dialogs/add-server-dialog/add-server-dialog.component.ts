@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-add-server-dialog',
@@ -6,24 +8,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-server-dialog.component.css'],
 })
 export class AddServerDialogComponent implements OnInit {
-  constructor() {}
-
+  form = new FormGroup({ name: new FormControl(''), url: new FormControl('') });
+  constructor(
+    private fb: FormBuilder,
+    private dialogRef: MatDialogRef<AddServerDialogComponent>,
+    @Inject(MAT_DIALOG_DATA) data
+  ) {}
   ngOnInit(): void {}
+
   userName: string = '';
   serverName: string = '';
 
-  serverCreated: boolean = undefined;
-  onSubmitFormButtonClick() {
-    setTimeout(() => {
-      this.serverName = '';
-      this.userName = '';
-    }, 2000);
-    this.serverCreated = this.serverName === 'a' ? false : true;
-    setTimeout(() => {
-      this.serverCreated = undefined;
-    }, 2000);
+  close() {
+    this.dialogRef.close();
   }
-  inputIsEmpty() {
-    return !(this.userName !== '' && this.serverName !== '');
+  save() {
+    this.dialogRef.close(this.form.value);
   }
 }

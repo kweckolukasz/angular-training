@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { ServerItemComponent } from './presentation/server/server-item/ServerItem.component';
 import { ServersComponent } from './presentation/servers/servers.component';
@@ -15,6 +15,9 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatTableModule } from '@angular/material/table';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+
 import {
   MatDialogModule,
   MAT_DIALOG_DEFAULT_OPTIONS,
@@ -35,7 +38,7 @@ import { AddServerDialogComponent } from './presentation/dialogs/add-server-dial
   ],
   imports: [
     BrowserModule,
-    FormsModule,
+    ReactiveFormsModule,
     CommonModule,
     BrowserAnimationsModule,
     LayoutModule,
@@ -47,6 +50,8 @@ import { AddServerDialogComponent } from './presentation/dialogs/add-server-dial
     MatTableModule,
     HttpClientModule,
     MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
   ],
   providers: [
     { provide: GETS_SERVERS, useClass: HttpServersService },
