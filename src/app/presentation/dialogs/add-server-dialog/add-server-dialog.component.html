@@ -1,11 +1,17 @@
 <h2 mat-dialog-title>Add new Server</h2>
 <mat-dialog-content>
-  <form [formGroup]="form">
-    <input matInput id="name" type="text" formControlName="name" />
-    <input matInput id="url" type="url" formControlName="url" />
+  <form mat-form [formGroup]="form" class="my-form">
+    <mat-form-field>
+      <mat-label>Name</mat-label>
+      <input matInput id="name" type="text" formControlName="name" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Url</mat-label>
+      <input matInput id="url" type="url" formControlName="url" />
+    </mat-form-field>
   </form>
 </mat-dialog-content>
-<mat-dialog-actions>
-  <button class="mat-raised-button" (click)="close()">Close</button>
+<mat-dialog-actions class="actions">
   <button class="mat-raised-button mat-primary" (click)="save()">Save</button>
+  <button class="mat-raised-button" (click)="close()">Close</button>
 </mat-dialog-actions>

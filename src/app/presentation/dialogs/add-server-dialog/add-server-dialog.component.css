@@ -1,0 +1,9 @@
+.my-form {
+  display: flex;
+  flex-direction: column;
+}
+.actions {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
