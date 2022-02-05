@@ -23,6 +23,10 @@ export class ServersComponent implements OnInit {
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
 
-    this.dialog.open(AddServerDialogComponent, dialogConfig);
+    const dialogRef = this.dialog.open(AddServerDialogComponent, dialogConfig);
+
+    dialogRef
+      .afterClosed()
+      .subscribe((data) => console.debug('dialog output', data));
   }
 }
