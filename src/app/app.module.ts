@@ -17,7 +17,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatTableModule } from '@angular/material/table';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-
+import { Routes, RouterModule } from '@angular/router';
 import {
   MatDialogModule,
   MAT_DIALOG_DEFAULT_OPTIONS,
@@ -26,7 +26,13 @@ import { GETS_SERVERS } from './domain/getsServers';
 import { HttpServersService } from './infrastructure/http-servers.service';
 import { HttpClientModule } from '@angular/common/http';
 import { AddServerDialogComponent } from './presentation/dialogs/add-server-dialog/add-server-dialog.component';
+import { from } from 'rxjs';
+import { GridComponent } from './presentation/grid/grid.component';
 
+const routes: Routes = [
+  { path: 'servers-list', component: ServersComponent },
+  { path: 'grid-example', component: GridComponent },
+];
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,6 +41,7 @@ import { AddServerDialogComponent } from './presentation/dialogs/add-server-dial
     StatusItemComponent,
     NavbarComponent,
     AddServerDialogComponent,
+    GridComponent,
   ],
   imports: [
     BrowserModule,
@@ -52,7 +59,9 @@ import { AddServerDialogComponent } from './presentation/dialogs/add-server-dial
     MatDialogModule,
     MatFormFieldModule,
     MatInputModule,
+    RouterModule.forRoot(routes),
   ],
+  exports: [RouterModule],
   providers: [
     { provide: GETS_SERVERS, useClass: HttpServersService },
     { provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: { hasBackdrop: false } },

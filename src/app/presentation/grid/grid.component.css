@@ -1,0 +1,52 @@
+.container {
+  display: grid;
+  text-align: center;
+
+  grid-template-columns: repeat(4, 1fr);
+  /* grid-template-columns: 100px 100px ...; */
+  /* 1:2 grid-template-columns: 1fr 2fr ...; */
+  grid-auto-rows: minmax(1fr, auto);
+  /* grid-template-rows: 150px 200px ...; */
+
+  grid-row-gap: 20px;
+  grid-column-gap: 20px;
+
+  grid-template-areas:
+    "header menu menu menu"
+    "hero hero hero hero"
+    "main main banner banner"
+    "footer footer footer footer ";
+}
+.header {
+  grid-area: header;
+  background-color: aqua;
+  text-align: center;
+}
+.menu {
+  grid-area: menu;
+  background-color: brown;
+  text-align: center;
+}
+.hero {
+  grid-area: hero;
+  background-color: yellow;
+  text-align: center;
+  border: 1px solid orange;
+}
+.main {
+  grid-area: main;
+  background-color: antiquewhite;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.banner {
+  grid-area: banner;
+  background-color: pink;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.footer {
+  grid-area: footer;
+  background-color: grey;
+  text-align: center;
+}
