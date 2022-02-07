@@ -10,12 +10,6 @@
 
   grid-row-gap: 20px;
   grid-column-gap: 20px;
-
-  grid-template-areas:
-    "header menu menu menu"
-    "hero hero hero hero"
-    "main main banner banner"
-    "footer footer footer footer ";
 }
 .header {
   grid-area: header;
