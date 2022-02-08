@@ -5,6 +5,7 @@
     >
     <mat-cell mat-cell *matCellDef="let server">{{ server.name }}</mat-cell>
   </ng-container>
+
   <ng-container matColumnDef="status">
     <mat-header-cell mat-header-cell *matHeaderCellDef
       >Status of Server</mat-header-cell
@@ -18,8 +19,11 @@
   </ng-container>
 
   <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-  <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+  <mat-row
+    *matRowDef="let row; columns: displayedColumns"
+    (click)="openDialog(row)"
+  ></mat-row>
 </mat-table>
-<button mat-fab class="mt-3" (click)="openDialog()">
+<button mat-fab class="mt-3" (click)="openDialog(null)">
   <mat-icon>add</mat-icon>
 </button>

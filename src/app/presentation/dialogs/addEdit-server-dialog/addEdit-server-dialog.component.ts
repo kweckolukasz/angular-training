@@ -15,17 +15,18 @@ import { Server } from './../../../domain/server';
 })
 export class AddEditServerDialogComponent implements OnInit {
   form: FormGroup;
-  validUrlRegex: RegExp = new RegExp('/[a-z]/g');
   constructor(
     private dialogRef: MatDialogRef<AddEditServerDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) data
+    @Inject(MAT_DIALOG_DATA) public data: Server
   ) {}
   ngOnInit(): void {
     this.form = new FormGroup({
-      name: new FormControl('', [Validators.required, Validators.minLength(1)]),
-      url: new FormControl('', [
+      name: new FormControl(this.data != null ? this.data.name : '', [
         Validators.required,
-        Validators.pattern(/[a-z]/g),
+        Validators.minLength(1),
+      ]),
+      url: new FormControl(this.data != null ? this.data.url : '', [
+        Validators.required,
       ]),
     });
   }

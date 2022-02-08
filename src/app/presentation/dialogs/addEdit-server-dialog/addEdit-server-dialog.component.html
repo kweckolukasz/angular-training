@@ -11,9 +11,6 @@
     <mat-form-field>
       <mat-label>Url</mat-label>
       <input matInput id="url" type="url" formControlName="url" required />
-      <mat-error *ngIf="url.errors?.['pattern']">
-        Input should be a URL
-      </mat-error>
     </mat-form-field>
   </form>
 </mat-dialog-content>
