@@ -25,7 +25,7 @@ import {
 import { GETS_SERVERS } from './domain/getsServers';
 import { HttpServersService } from './infrastructure/http-servers.service';
 import { HttpClientModule } from '@angular/common/http';
-import { AddServerDialogComponent } from './presentation/dialogs/add-server-dialog/add-server-dialog.component';
+import { AddEditServerDialogComponent } from './presentation/dialogs/addEdit-server-dialog/addEdit-server-dialog.component';
 import { from } from 'rxjs';
 import { GridComponent } from './presentation/grid/grid.component';
 
@@ -40,7 +40,7 @@ const routes: Routes = [
     ServersComponent,
     StatusItemComponent,
     NavbarComponent,
-    AddServerDialogComponent,
+    AddEditServerDialogComponent,
     GridComponent,
   ],
   imports: [

@@ -1,7 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { GetsServers, GETS_SERVERS } from 'src/app/domain/getsServers';
-import { AddServerDialogComponent } from '../dialogs/add-server-dialog/add-server-dialog.component';
+import { AddEditServerDialogComponent } from '../dialogs/addEdit-server-dialog/addEdit-server-dialog.component';
 
 @Component({
   selector: 'app-servers',
@@ -23,7 +23,10 @@ export class ServersComponent implements OnInit {
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
 
-    const dialogRef = this.dialog.open(AddServerDialogComponent, dialogConfig);
+    const dialogRef = this.dialog.open(
+      AddEditServerDialogComponent,
+      dialogConfig
+    );
 
     dialogRef
       .afterClosed()
